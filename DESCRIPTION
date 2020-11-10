@@ -15,3 +15,8 @@ RoxygenNote: 7.1.1
 Imports: 
     ggplot2,
     DBI
+Suggests: 
+    testthat,
+    mockery,
+    RSQLite
+Config/testthat/edition: 3
