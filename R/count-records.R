@@ -6,5 +6,5 @@
 #'
 #' @export
 count_records <- function(table_name, conn) {
-  DBI::dbGetQuery(conn, paste("SELECT COUNT(*) FROM", table_name))
+  DBI::dbGetQuery(conn, paste("SELECT COUNT(*) FROM", table_name))[[1]]
 }
