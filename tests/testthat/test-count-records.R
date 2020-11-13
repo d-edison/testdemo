@@ -13,12 +13,8 @@ test_that("demonstrate stubbing", {
   expect_called(David, 1)
 })
 
-# you can test this way, but it hit the "DB" every time
+# We did it!
 test_that("returns an integer", {
-  con <- DBI::dbConnect(RSQLite::SQLite(), dbname = ":memory:")
-  DBI::dbWriteTable(con, "mtcars", mtcars)
+  stub(count_records, "DBI::dbGetQuery", 5L)
   expect_true(is.integer(count_records("mtcars", con)))
-  DBI::dbDisconnect(con)
 })
-
-# can we test this with mockery?
